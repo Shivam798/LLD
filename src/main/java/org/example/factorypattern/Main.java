@@ -1,22 +1,13 @@
 package org.example.factorypattern;
 
-import org.example.factorypattern.pizzas.Pizza;
+import org.example.factorypattern.store.NYPizzaFactory;
+import org.example.factorypattern.store.PizzaFactory;
 
 public class Main {
     public static void main(String[] args) {
-        Pizza margherita = PizzaFactory.makePizza("margherita");
-        margherita.prepare();
-        margherita.bake();
-        margherita.box();
+        PizzaFactory nyPizzaFactory = new NYPizzaFactory();
+        nyPizzaFactory.orderPizza("veggie");
 
-        Pizza pepperoni = PizzaFactory.makePizza("pepperoni");
-        pepperoni.prepare();
-        pepperoni.bake();
-        pepperoni.box();
 
-        Pizza veggie = PizzaFactory.makePizza("veggie");
-        veggie.prepare();
-        veggie.bake();
-        veggie.box();
     }
 }
